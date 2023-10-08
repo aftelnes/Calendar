@@ -1,6 +1,7 @@
 import React from "react";
 import classes from './ModalWindow.module.css'
 import CloseBtn from "./CloseButton";
+import ShowLessonAndWeekDayData from './ShowLessonAndWeeDayData';
 
 const ModalWindow = ({children, visible, setVisible}) => {
 
@@ -11,27 +12,18 @@ const ModalWindow = ({children, visible, setVisible}) => {
         rootClasses.push(classes.active);
     }
 
-    let lesson_ary = []
-    for (let i = 0; i < 100 ; i++) {
-        const key = localStorage.key(i);
-        const value = localStorage.getItem(key);
-        if (value != ',') {
-            lesson_ary.push(i);
-        }
-    }
-    console.log(`lesson_ary = ${lesson_ary}`)
-    
-
     return(
         <div className={rootClasses.join(' ')} onClick={() => setVisible(true)}>
             <div className={classes.ModalContent} onClick={(event => event.stopPropagation())}>
                 <div className={classes.headerAndCloseBtn}>
                     <h3>Занятость <CloseBtn onClick={() => {setVisible(false); localStorage.clear()}} style={{marginLeft: '62%'}}/></h3>
                 </div>
-                <h5 style={{marginBottom: '0.5%'}}>Сотрудник:</h5>
-                {fio}
-                <h5 style={{marginBottom: '0.5%'}}>Примечание:</h5>
-                {note}
+                <h5 style={{marginBottom: '-1.5%'}}>Сотрудник:</h5>
+                <p style={{marginTop: '0.5%', fontSize: '90%', marginBottom: '-5%'}}>{fio}</p>
+                <h5 style={{marginBottom: '-4%'}}>Занятость:</h5>
+                <ShowLessonAndWeekDayData></ShowLessonAndWeekDayData>
+                <h5 style={{marginBottom: '4.5%'}}>Примечание:</h5>
+                <p style={{marginTop: '-6%', fontSize: '90%'}}>{note}</p>
             </div>
         </div>
     );

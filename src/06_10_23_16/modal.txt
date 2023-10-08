@@ -1,0 +1,45 @@
+import React from "react";
+import classes from './ModalWindow.module.css'
+import CloseBtn from "./CloseButton";
+import getLessonsAndWeekDays from "../Functions/CountLessonsAndWeekDays";
+import showLessonAndWeekDayData from "./ShowLessonAndWeeDayData";
+import { type } from "@testing-library/user-event/dist/type";
+
+const ModalWindow = ({children, visible, setVisible}) => {
+
+    const fio = children[0];
+    const note = children[1];
+    const rootClasses = [classes.Modal];
+    if (visible) {
+        rootClasses.push(classes.active);
+    }
+
+    let result_ary = [];
+    result_ary = getLessonsAndWeekDays(); 
+    
+    // for (let i = 0; i < result_ary.length; i++) {
+    //     console.log(`RESULT_ARY[i] = ${result_ary[i]}, i = ${i}`)
+    //     console.log(`TYPE ${typeof result_ary[i]}`)
+    // }
+    const tmp = result_ary[0].sort().toString();
+    console.log(`tmp = ${tmp}, typeof = ${typeof tmp}`)
+
+    return(
+        <div className={rootClasses.join(' ')} onClick={() => setVisible(true)}>
+            <div className={classes.ModalContent} onClick={(event => event.stopPropagation())}>
+                <div className={classes.headerAndCloseBtn}>
+                    <h3>Занятость <CloseBtn onClick={() => {setVisible(false); localStorage.clear()}} style={{marginLeft: '62%'}}/></h3>
+                </div>
+                {result_ary[0].length != 0 ? <p>Понедельник: {tmp}</p> : <p></p>
+                }
+                <h5 style={{marginBottom: '0.5%'}}>Сотрудник:</h5>
+                {fio}
+                <h5 style={{marginBottom: '0.5%'}}>Примечание:</h5>
+                {note}
+            </div>
+        </div>
+    );
+
+};
+
+export default ModalWindow;
