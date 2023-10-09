@@ -25,14 +25,14 @@ const Table = () => {
       field: "monday",
       type: "editableColumn",
       weekDayNum: '1',
-      width: 190,
+      width: 150,
       },
       {
       headerName: "Вторник",
       field: "tuesday",
       type: "editableColumn",
       weekDayNum: '2',
-      width: 190,
+      width: 150,
 
       },
       {
@@ -40,7 +40,7 @@ const Table = () => {
       field: "wednesday",
       type: "editableColumn",
       weekDayNum: '3',
-      width: 190,
+      width: 150,
 
       },
       {
@@ -48,7 +48,7 @@ const Table = () => {
       field: "thursday",
       type: "editableColumn",
       weekDayNum: '4',
-      width: 190,
+      width: 150,
 
       },
       {
@@ -56,7 +56,7 @@ const Table = () => {
       field: "friday",
       type: "editableColumn",
       weekDayNum: '5',
-      width: 190,
+      width: 150,
 
       },
       {
@@ -64,7 +64,7 @@ const Table = () => {
       field: "saturday",
       type: "editableColumn",
       weekDayNum: '6',
-      width: 190,
+      width: 150,
 
       },
       {
@@ -72,7 +72,7 @@ const Table = () => {
       field: "sunday",
       type: "editableColumn",
       weekDayNum: '7',
-      width: 190,
+      width: 150,
       },
     ]);
     
