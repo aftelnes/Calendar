@@ -45,8 +45,8 @@ const App = () => {
         placeholder='Фамилия Имя Отчество'
         onChange={event => setFio(event.target.value)}></MyInput>
 
-
-        <Table></Table>
+        <Table ></Table>
+        
         <h4 style={{marginLeft: '2%', marginBottom: '0.5%'}}>Примечание</h4>
         <TextArea onChange={event => setNote(event.target.value)} placeholder='Ваши примечания' style={{marginLeft: "2%", width: '92%'}}></TextArea>
         <MyButton onClick={showModalWindowInfo}>Отправить</MyButton>

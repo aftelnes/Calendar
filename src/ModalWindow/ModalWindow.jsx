@@ -20,7 +20,7 @@ const ModalWindow = ({children, visible, setVisible}) => {
                 </div>
                 <h5 style={{marginBottom: '-1.5%'}}>Сотрудник:</h5>
                 <p style={{marginTop: '0.5%', fontSize: '90%', marginBottom: '-5%'}}>{fio}</p>
-                <h5 style={{marginBottom: '-4%'}}>Занятость:</h5>
+                <h5 style={{marginBottom: '-5.5%'}}>Занятость:</h5>
                 <ShowLessonAndWeekDayData></ShowLessonAndWeekDayData>
                 <h5 style={{marginBottom: '4.5%'}}>Примечание:</h5>
                 <p style={{marginTop: '-6%', fontSize: '90%'}}>{note}</p>
